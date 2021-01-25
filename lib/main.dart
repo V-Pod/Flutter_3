@@ -108,10 +108,24 @@ class _MyHomePageState extends State<MyHomePage> {
                   ..color = Colors.blue[200],
               ),
             ),
-            Image.asset('assets/images/adobestock_215825434.jpeg'),
+            Container(
+              height: 200,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  fit: BoxFit.cover,
+                  image: NetworkImage(
+                    'https://picsum.photos/300/600',
+                  ),
+                ),
+              ),
+            ),
+            Image.network(
+              'https://picsum.photos/300/300',
+            ),
           ],
         ),
       ),
+
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
