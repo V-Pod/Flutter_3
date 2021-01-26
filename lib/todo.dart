@@ -1,6 +1,9 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:uuid/uuid.dart';
+
+// Package imports:
 import 'package:shimmer/shimmer.dart';
+import 'package:uuid/uuid.dart';
 
 void main() {
   runApp(MyApp());

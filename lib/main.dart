@@ -1,7 +1,11 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:uuid/uuid.dart';
-import 'package:shimmer/shimmer.dart';
+
+// Package imports:
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:shimmer/shimmer.dart';
+import 'package:uuid/uuid.dart';
 
 void main() {
   runApp(MyApp());
@@ -83,48 +87,32 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
         child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            SizedBox(
-              width: 200.0,
-              height: 100.0,
-              child: Shimmer.fromColors(
-                baseColor: Colors.red,
-                highlightColor: Colors.yellow,
-                child: Text(
-                  'Shimmer',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 40.0,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-            ),
-            Text(
-              '${uuid.v4()}',
-              style: TextStyle(
-                fontFamily: 'Baskerville',
-                fontSize: 30,
-              ),
-            ),
+            // SizedBox(
+            //   width: 200.0,
+            //   height: 100.0,
+            //   child: Shimmer.fromColors(
+            //     baseColor: Colors.red,
+            //     highlightColor: Colors.yellow,
+            //     child: Text(
+            //       'Shimmer',
+            //       textAlign: TextAlign.center,
+            //       style: TextStyle(
+            //         fontSize: 40.0,
+            //         fontWeight: FontWeight.bold,
+            //       ),
+            //     ),
+            //   ),
+            // ),
+            // Text(
+            //   '${uuid.v4()}',
+            //   style: TextStyle(
+            //     fontFamily: 'Baskerville',
+            //     fontSize: 30,
+            //   ),
+            // ),
             // Container(
             //   height: 200,
             //   decoration: BoxDecoration(
@@ -136,7 +124,25 @@ class _MyHomePageState extends State<MyHomePage> {
             //     ),
             //   ),
             // ),
-            SvgPicture.asset(pineapple),
+            SizedBox(
+              width: 100.0,
+              height: 100.0,
+              child: SvgPicture.asset(pineapple),
+            ),
+            CarouselSlider(
+                items: [
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10.0),
+                      image: DecorationImage(
+                          image: AssetImage(
+                              'assets/images/adobestock_215825434.jpeg')),
+                    ),
+                  )
+                ],
+                options: CarouselOptions(
+                  height: 400.0,
+                ))
           ],
         ),
       ),
