@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:uuid/uuid.dart';
 import 'package:shimmer/shimmer.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 void main() {
   runApp(MyApp());
@@ -55,7 +54,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
   Uuid uuid = Uuid();
-  String pineapple = 'assets/images/pineapple.svg';
 
   void _incrementCounter() {
     setState(() {
@@ -119,24 +117,12 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             Text(
-              '${uuid.v4()}',
+              'TODO',
               style: TextStyle(
                 fontFamily: 'Baskerville',
                 fontSize: 30,
               ),
             ),
-            // Container(
-            //   height: 200,
-            //   decoration: BoxDecoration(
-            //     image: DecorationImage(
-            //       fit: BoxFit.cover,
-            //       image: NetworkImage(
-            //         'https://picsum.photos/300/600',
-            //       ),
-            //     ),
-            //   ),
-            // ),
-            SvgPicture.asset(pineapple),
           ],
         ),
       ),
